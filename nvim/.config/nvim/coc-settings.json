@@ -1,0 +1,24 @@
+{
+  "diagnostic-languageserver.filetypes": {
+    "python": "flake8",
+  },
+ "diagnostic-languageserver.linters": {
+    "flake8": {
+      "sourceName": "flake8",
+      "command": "flake8",
+    }
+  },
+  "diagnostic-languageserver.formatFiletypes": {
+    "python": ["black", "isort"]
+  },
+  "diagnostic-languageserver.formatters": {
+    "black": {
+      "command": "~/.pyenv/versions/neovim3/bin/black",
+      "args": ["-q", "-"]
+    },
+    "isort": {
+      "command": "~/.pyenv/versions/neovim3/bin/isort",
+      "args": ["-q", "-"]
+    }
+  }
+}

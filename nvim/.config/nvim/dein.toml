@@ -1,0 +1,59 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+hook_add = '''
+  map <C-t> :NERDTreeToggle<CR>
+'''
+
+[[plugins]] 
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  au MyAutoCmd VimEnter * nested colorscheme hybrid
+  syntax on
+  set t_Co=256
+  " truecolor
+  set termguicolors
+  set background=dark
+'''
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+hook_add = '''
+noremap <Leader>f :<C-u>Files<CR>
+noremap <Leader>l :<C-u>Lines<CR>
+noremap <Leader>bl :<C-u>BLines<CR>
+noremap <Leader>b :<C-u>Buffers<CR>
+noremap <Leader>g :<C-u>Rg<CR>
+noremap <Leader>h :<C-u>History<CR>
+
+" https://qiita.com/masakuni-ito/items/84cb72b270fe54be259e
+command! -bang -nargs=* Rgs
+  \ call fzf#vim#grep(
+  \   'rg --encoding Shift_JIS --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+nnoremap <silent> <Leader>gs :<C-u>Rgs<CR>
+'''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+" s{char}{char} to move to {char}{char}
+map <leader>s <Plug>(easymotion-bd-f2)
+nmap <leader>s <Plug>(easymotion-overwin-f2)
+" Move to line
+map <leader><leader>l <Plug>(easymotion-bd-jk)
+nmap <leader><leader>l <Plug>(easymotion-overwin-line)
+'''
+
