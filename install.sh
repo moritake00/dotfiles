@@ -20,7 +20,8 @@ echo '====== software install ======'
 echo '=== common software ==='
 sudo apt install -y \
     git zsh zip unzip autoconf bison build-essential libssl-dev libyaml-dev \
-    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev
+    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev \
+    software-properties-common
 
 echo '=== deno ==='
 curl -fsSL https://deno.land/x/install/install.sh | sh
