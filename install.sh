@@ -35,7 +35,7 @@ echo '=== ripgrep ==='
 sudo apt install -y ripgrep
 
 echo '=== fish (shell) ==='
-$(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
+# $(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
 echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install -y fish
 
