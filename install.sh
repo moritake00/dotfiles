@@ -40,8 +40,7 @@ echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install -y fish
 
 echo '=== fzf & fish plugins ==='
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf/
-fish install_fisher_and_fzf.fish
+fish ~/dotfile/install_fisher_and_fzf.fish
 
 echo '=== node ==='
 sudo apt install -y nodejs npm
