@@ -40,7 +40,7 @@ echo "$password" | sudo -S apt -y update
 echo "$password" | sudo -S apt install -y fish
 
 echo '=== fzf & fish plugins ==='
-fish ~/dotfile/install_fisher_and_fzf.fish
+fish ~/dotfiles/install_fisher_and_fzf.fish
 
 echo '=== node ==='
 sudo apt install -y nodejs npm
