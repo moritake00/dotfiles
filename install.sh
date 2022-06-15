@@ -63,12 +63,12 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/py
 echo '=== python ==='
 pyenv install $(pyenv install -l | grep -v '[a-zA-Z]' | grep -e '\s2\.?*' | tail -1)
 pyenv virtualenv $(pyenv install -l | grep -v '[a-zA-Z]' | grep -e '\s2\.?*' | tail -1) neovim2
-source .pyenv/versions/neovim2/bin/activate.fish
+pyenv activate neovim2
 pip install -r neovim2.txt
 pyenv deactivate
 pyenv install $(pyenv install -l | grep -v '[a-zA-Z]' | grep -e '\s3\.?*' | tail -1)
 pyenv virtualenv $(pyenv install -l | grep -v '[a-zA-Z]' | grep -e '\s3\.?*' | tail -1) neovim3
-source .pyenv/versions/neovim3/bin/activate.fish
+pyenv activate neovim3
 pip install -r neovim3.txt
 pyenv deactivate
 
