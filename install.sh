@@ -38,16 +38,10 @@ echo '=== fish (shell) ==='
 $(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
 echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install -y fish
-fish
-
-echo '=== fisher ==='
-curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
-fisher update
-fisher install h-matsuo/fish-color-scheme-switcher
 
 echo '=== fzf & fish plugins ==='
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf/
-fish install_fish_plug.fish
+fish install_fisher_and_fzf.fish
 
 echo '=== node ==='
 sudo apt install -y nodejs npm
