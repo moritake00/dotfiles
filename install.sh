@@ -20,8 +20,8 @@ echo '====== software install ======'
 echo '=== common software ==='
 sudo apt install -y \
     git zsh zip unzip autoconf bison build-essential libssl-dev libyaml-dev \
-    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev \
-    software-properties-common
+    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev 
+#    software-properties-common
 
 echo '=== deno ==='
 curl -fsSL https://deno.land/x/install/install.sh | sh
@@ -36,8 +36,7 @@ sudo apt install -y ripgrep
 
 echo '=== fish (shell) ==='
 $(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
-sudo apt -y update
-echo "$password" | sudo -S apt update
+echo "$password" | sudo -S apt -y update
 echo "$password" | sudo -S apt install -y fish
 
 echo '=== fzf & fish plugins ==='
@@ -52,7 +51,7 @@ sudo apt purge -y nodejs npm
 
 echo '=== neovim ==='
 $(echo "$password";yes) | sudo -S add-apt-repository ppa:neovim-ppa/unstable
-sudo apt -y update
+echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install -y neovim 
 
 echo '=== pyenv ==='
