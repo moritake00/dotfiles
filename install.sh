@@ -20,8 +20,8 @@ echo '====== software install ======'
 echo '=== common software ==='
 sudo apt install -y \
     git zsh zip unzip autoconf bison build-essential libssl-dev libyaml-dev \
-    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev 
-#    software-properties-common
+    libreadline6-dev zlib1g-dev libncurses5-dev libffi-dev libgdbm-dev \
+    software-properties-common
 
 echo '=== deno ==='
 curl -fsSL https://deno.land/x/install/install.sh | sh
@@ -51,7 +51,7 @@ sudo apt purge -y nodejs npm
 
 echo '=== neovim ==='
 $(echo "$password";yes) | sudo -S add-apt-repository ppa:neovim-ppa/unstable
-echo "$password" | sudo -S apt update
+echo "$password" | sudo -S apt -y update
 echo "$password" | sudo -S apt install -y neovim 
 
 echo '=== pyenv ==='
