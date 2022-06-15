@@ -35,7 +35,8 @@ echo '=== ripgrep ==='
 sudo apt install -y ripgrep
 
 echo '=== fish (shell) ==='
-# $(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
+$(echo "$password";yes) | sudo -S apt-add-repository ppa:fish-shell/release-3
+sudo apt -y update
 echo "$password" | sudo -S apt update
 echo "$password" | sudo -S apt install -y fish
 
@@ -51,7 +52,7 @@ sudo apt purge -y nodejs npm
 
 echo '=== neovim ==='
 $(echo "$password";yes) | sudo -S add-apt-repository ppa:neovim-ppa/unstable
-echo "$password" | sudo -S apt update
+sudo apt -y update
 echo "$password" | sudo -S apt install -y neovim 
 
 echo '=== pyenv ==='
